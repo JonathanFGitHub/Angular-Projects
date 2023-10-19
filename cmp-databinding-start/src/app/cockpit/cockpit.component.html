@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-xs-12">
+      <p>Add new Servers or blueprints!</p>
+
+      <label>Server Name</label>
+      <!-- <input type="text" class="form-control" [(ngModel)]="newServerName"> -->
+      <input type="text" class="form-control" #serverNameInput> <!--This is creating a local reference to get the value and pass it-->
+
+      <label>Server Content</label>
+      <!-- <input type="text" class="form-control" [(ngModel)]="newServerContent"> -->
+      <input type="text" class="form-control" #serverContentInputs> <!--This is using the local reference view child approach-->
+      <br>
+
+      <button
+        class="btn btn-primary"
+        (click)="onAddServer(serverNameInput)">Add Server</button> <!--I am using a local reference (through method) to pass the input data. Use below commented out code for old way-->
+        <!-- <button
+        class="btn btn-primary"
+        (click)="onAddServer()">Add Server</button> -->
+
+      <button
+        class="btn btn-primary"
+        (click)="onAddBlueprint(serverNameInput)">Add Server Blueprint</button> <!--Takeout 'serverNameInput form both methods if not wanting to use local reference'-->
+
+
+        <!--This is me playing around below-->
+        <button class="btn btn-primary" (click)="toggleDisplay()">Toggle Display</button>
+        <div *ngIf="isDisplayed">Hello Jonathan</div>
+        <p>{{isDisplayed ? 'Thanks for toggling the button' : 'Hey, click the toogle button!'}}</p>
+    </div>
+  </div>

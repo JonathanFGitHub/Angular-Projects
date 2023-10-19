@@ -1,0 +1,13 @@
+<div
+class="panel panel-default">
+  <div class="panel-heading" #heading>{{ element.name }}</div>
+  <!-- <div class="panel-heading">{{ name }}</div> -->
+  <div class="panel-body">
+    <!--Old way of passing in the data. See the app.component.html file to view how we pass it in using ng-content. Anything between the selector gets passed into ng-content.-->
+    <!-- <p>
+      <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+      <em *ngIf="element.type === 'blueprint'" style="color: blue">{{ element.content }}</em>
+    </p> -->
+  <ng-content></ng-content>
+  </div>
+</div>
